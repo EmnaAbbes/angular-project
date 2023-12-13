@@ -1,0 +1,15 @@
+<body>
+    <div class="row">
+        <div class="col-md-10">
+            <app-cards #productsC [hidden]="orderFinished" (productAdded)="addProductToCart($event)"></app-cards>
+        </div>
+        <div *ngIf="isUserSignedIn();" class="col-md-2" style="margin-top: 150px;">
+            <button (click)="cartEvent()" class="btn bg-transparent p-0 "><img src="assets/food-package.png" width=80
+                    height=80 alt="shopping cart icon"></button>
+            <div *ngIf="isCartOpen">
+                <app-panier [productAdded]="productAdded" (onOrderFinished)="finishOrder($event)" #shoppingCartC
+                    [hidden]="orderFinished"></app-panier>
+            </div>
+        </div>
+    </div>
+</body>

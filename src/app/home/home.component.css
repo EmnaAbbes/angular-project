@@ -1,0 +1,20 @@
+.opacity-carousel::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.ffasc {
+    font-family: 'Amatic SC';
+}
+
+.red {
+    color: #d44040;
+}
+
+.text {
+    font-family: "Delicious Handrawn";
+}

@@ -1,0 +1,15 @@
+body {
+    background: linear-gradient(to left, #e7c6c6, #be5869);
+    display: flex;
+  }
+  
+.container {
+    margin-top: 130px;
+    margin-bottom: 50px;
+
+}
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+
+
+

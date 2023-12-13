@@ -1,0 +1,7 @@
+.navbar {
+    height: 100px;
+}
+
+.navbar-bg {
+    background: linear-gradient(to left, #998994, #be5869);
+}

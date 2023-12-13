@@ -1,0 +1,37 @@
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top"
+    style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;"
+    [ngClass]="{'bg-transparent': !isScrolled, 'navbar-bg': isScrolled}">
+    <div class="container-fluid">
+      <a class="" routerLink="/"><img src="assets/logo5.png" width="120"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active me-2 fw-bold text-light" aria-current="page" routerLink="/menu">Our Menu</a>
+          </li>
+
+          <li class="nav-item" *ngIf="isUserSignedIn();">
+            <a class="nav-link active me-2 fw-bold text-light" aria-current="page">Welcome {{ UserName()}}</a>
+          </li>
+          <li class="nav-item" *ngIf="isUserSignedIn();">
+            <button *ngIf="isUserSignedIn();" class="nav-link active me-2 fw-bold text-light" aria-current="page"
+              (click)="logout()">Logout</button>
+          </li>
+          <a *ngIf="!isUserSignedIn();" class="nav-link active me-2 fw-bold text-light" aria-current="page"
+            routerLink="/register">Sign Up</a>
+          <li class="nav-item">
+            <a *ngIf="!isUserSignedIn();" class="nav-link active me-2 fw-bold text-light" aria-current="page"
+              routerLink="/login">Sign In</a>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+</body>

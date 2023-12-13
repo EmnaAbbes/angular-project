@@ -1,0 +1,22 @@
+<body>
+<form (ngSubmit)="loginUser()">
+  <div class="row bg-light justify-content-center w-50 border border-secondary border-1 rounded p-5 position-absolute top-50 start-50 translate-middle">
+    <div class="col text-center">
+      <h2 class="text-center pb-5" style="color: #EF9595;">Login</h2>
+      <div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="Email" name="email"
+            [(ngModel)]="email">
+          <label for="floatingInput">Email</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="password" name="password"
+            [(ngModel)]="password">
+          <label for="floatingInput">Password</label>
+        </div>
+      </div>
+      <button class="btn mt-3" style="background-color: #EF9595; color:white;" type="submit">Login</button>
+    </div>
+  </div>
+</form>
+</body>

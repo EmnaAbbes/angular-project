@@ -1,0 +1,54 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn text text-light fs-5 mb-2" (click)="openModal()">
+  <img src="assets/add.png" width="40">
+  Nouveau Repas
+</button>
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Ajout Repas</h4>
+        <button type="button" class="btn btn-default" aria-label="Close" (click)="closeModal()"><span
+            aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <template *ngTemplateOutlet="formProduct"></template>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Form -->
+<ng-template #formProduct>
+  <form (ngSubmit)="ajoutarticle()">
+    <div class="mb-3">
+      <div class="mb-3">
+        <input required minlength="4" #designation="ngModel" type="text" class="form-control" id="designation"
+          name="designation" placeholder="Désignation *" [(ngModel)]="products.designation">
+      </div>
+      <div class="mb-3">
+        <input required minlength="4" #designation="ngModel" type="text" class="form-control" id="designation"
+          name="designation" placeholder="Désignation *" [(ngModel)]="products.price">
+      </div>
+      <div class="mb-3">
+        <file-pond #myPond [options]="pondOptions">
+        </file-pond>
+        <div class="mb-3">
+          Catégories : <select name="scategorieID" class="form-control" [(ngModel)]="products.categoryID">
+            <option *ngFor="let sd of scategories" value="{{sd._id}}">
+              {{sd.categoryName}}
+            </option>
+          </select>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-danger" (clic)="ajoutarticle()">Enregistrer</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</ng-template>
