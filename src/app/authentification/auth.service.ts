@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  endpoint: string = "http://localhost:3005/api";
+  endpoint: string = "https://my-resto-nodejs-emnaabbes.vercel.app/api";
 
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser: string;
